@@ -1,0 +1,36 @@
+import random
+
+print(' Generador de contrasenya amb següents característiquese:')
+print('   -Mínim 7 caràcters')
+print('   -Mínim 1 majúscula')
+print('   -Mínim 1 minúscula')
+print('   -Mínim 1 caràcter especial (només aquests caràcters especials: -, ?, !, @)')
+print('   -Mínim 1 número')
+print('   -Màxim 20 caràcters')
+print('   -Comença amb 1 guió')
+
+llista_de_minúscules = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+
+llista_de_majúscules = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+
+llista_de_caràcters_especial = ['-', '?', '!', '@']
+
+contrasenya = '-'
+
+llargada = random.randint(7, 20)
+
+print(f'La contrasenya generada te {llargada} caràcters.')
+
+while len(contrasenya) < llargada:
+    i = random.randint(1, 3)
+    if i == 1:
+        i = random.randint(0, 25)
+        contrasenya += llista_de_minúscules[i]
+    elif i == 2:
+        i = random.randint(0, 25)
+        contrasenya += llista_de_majúscules[i]
+    else:
+        i = random.randint(0, 3)
+        contrasenya += llista_de_caràcters_especial[i]
+
+print("La contrasenya generada es:" +str(contrasenya))
